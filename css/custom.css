@@ -37,24 +37,24 @@ h3 {
 .col {
     margin-top: 50px;
     width: 90%;
-    max-width: 1000px;
+    max-width: 600px;
     display: flex;
     flex-wrap: wrap;
     color: aliceblue;
     font-size: 1.2rem;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
 }
 
 .col div {
-    width: 22%; 
-    min-width: 120px;
+    flex: 1 1 120px; /* Flexible width with minimum of 120px */
+    max-width: 150px; /* Prevents extra-wide boxes */
     text-align: center;
 }
 
+/* Input fields */
 input {
-    width: 80%;
-    max-width: 100px; 
+    width: 100%;
     background-color: rgba(240, 248, 255, 0.5);
     border: none;
     border-radius: 5px;
@@ -63,37 +63,37 @@ input {
     font-size: 2rem;
 }
 
-
+/* 📱 Fully Responsive Adjustments */
 @media (max-width: 768px) {
     .col {
-        gap: 10px;
+        max-width: 400px;
     }
 
     .col div {
-        width: 30%; 
-        min-width: 90px;
+        flex: 1 1 100px;
+        max-width: 120px;
     }
 
     input {
-        max-width: 90px;
-        font-size: 1.5rem;
         height: 40px;
+        font-size: 1.5rem;
     }
 }
 
 @media (max-width: 480px) {
     .col {
-        flex-direction: column; 
+        flex-direction: column; /* Stack countdown boxes */
         align-items: center;
+        max-width: 300px;
     }
 
     .col div {
-        width: 80%; 
+        width: 80%;
+        max-width: 200px;
     }
 
     input {
-        max-width: 80px;
-        font-size: 1.2rem;
         height: 35px;
+        font-size: 1.2rem;
     }
 }
